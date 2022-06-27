@@ -1,0 +1,12 @@
+#Game-Setup{
+    width: 500px;
+    Position:relative;
+    top:100px;
+    left:400px;
+    background-color: #CCCCCC;
+    padding-bottom:40px;
+    padding-left:100px;
+    padding-top:40px;
+    padding-right:70px;
+    border-radius:10px;
+}
