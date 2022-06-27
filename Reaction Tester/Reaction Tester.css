@@ -1,0 +1,16 @@
+h1{
+    font-size:50px;
+}
+#instruction{
+    font-size:20px;
+    font-weight: bold;
+}
+#timeInformer{
+    font-size:18px;
+    font-weight: bold;
+}
+
+#shape{
+    
+    position:relative;
+}
