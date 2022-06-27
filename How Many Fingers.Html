@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <title>How Many Fingers?</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />   
+    <style type="text/css">
+        #Game-Setup{
+            width: 500px;
+            Position:relative;
+            top:100px;
+            left:400px;
+            background-color: #CCCCCC;
+            padding-bottom:40px;
+            padding-left:100px;
+            padding-top:40px;
+            padding-right:70px;
+            border-radius:10px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="Game-Setup">
+    <p id="text"> <h1> How Many Fingers Am I Holding?</h1></p>
+    <p><input id="guessedNumber" type="number" min="0" max="5">
+        <button id="checkNumber">Check Number</button>
+    </p>
+    <p id="text-2"><h1> How many Fingers User is Holding Up?</h1></p>
+    <p> <input id="myFinger" type="number" min="0" max="5">
+        <button id="enterNumber">Fingers</button>
+    </p>
+</div>
+
+
+    <script type="text/javascript">
+        document.getElementById("checkNumber").onclick = function(){
+            var numberEntered = document.getElementById("guessedNumber").value;
+            var actualFinger = Math.floor(Math.random() * 6);
+            if (numberEntered==actualFinger) {
+                alert("You are correct I am holding " + actualFinger + " fingers");
+            }
+            else {
+                alert ("Your guess is incorrect, I am holding " + actualFinger + " fingers");
+            }
+            //for If Statements
+        }
+        
+        function doAGuess (correctAnswer) {
+
+            var guess = Math.floor(Math.random() * 6); 
+                
+                if (guess==correctAnswer) {
+                    return (true);
+                }
+                else {
+                    return (false);
+                }
+        }
+
+        document.getElementById("enterNumber").onclick = function(){
+            var myNumber = document.getElementById("myFinger").value;
+            var gotIt = false;
+            var numberOfGuesses = 1;
+            
+            while (gotIt==false){
+                
+                if (doAGuess(myNumber)==true) {
+                    gotIt = true;
+                    alert ("Got It, You are holding " + myNumber + " fingers, it took me " + numberOfGuesses + " guesses")
+                }
+                else {
+                    numberOfGuesses++;
+                }
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
